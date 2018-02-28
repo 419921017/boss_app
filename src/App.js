@@ -22,15 +22,10 @@ class App extends React.Component{
   render() {
     return (
       <div>
-        {
-          /*
-          <div>现在有机枪{this.props.num}把</div>
-          <Button onClick={() => this.props.add()}>申请武器</Button>
-          <Button onClick={() => this.props.reduce()}>缩减武器</Button>
-          <Button onClick={() => this.props.async(add)}>缓两天</Button>
-          */
-        }
-        1234
+        <div>现在有机枪{this.props.num}把</div>
+        <Button onClick={() => this.props.add()}>申请武器</Button>
+        <Button onClick={() => this.props.reduce()}>缩减武器</Button>
+        <Button onClick={() => this.props.async(add)}>缓两天</Button>
       </div>
     )
   }

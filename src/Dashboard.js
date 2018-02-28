@@ -26,8 +26,10 @@ class Dashboard extends React.Component {
   }
   render() {
     const redirectToLogin = <Redirect to="/login"></Redirect>
-    const app = (<div>
+    const app = (
+      <div>
         <h2>Dashboard</h2>
+        { this.props.isAuth ? <button onClick={this.props.logout}>注销</button> : null }
         <ul>
           <li>
             <Link to="/dashboard/">fisrt</Link>
