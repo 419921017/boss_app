@@ -19,6 +19,8 @@ const reduxDevtools = window.devToolsExtendion ? window.devToolsExtendion() : f 
 const store = createStore(reducers, compose(applyMiddleware(thunk), reduxDevtools) )
 // const store = createStore(reducers, compose(applyMiddleware(thunk), reduxDevtools) )
 console.log('store', store.getState())
+
+
 ReactDOM.render(
   (
     <Provider store={store}>

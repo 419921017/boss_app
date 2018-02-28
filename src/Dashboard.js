@@ -1,7 +1,8 @@
 import React from 'react'
 import App from './App'
-import { Link, Route } from 'react-router-dom'
-
+import { Link, Route, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { logout } from './Auth.redux'
 
 function Second() {
   return (
@@ -14,13 +15,18 @@ function Third() {
   )
 }
 
+@connect(
+  state => state.auth,
+  {logout}
+)
+
 class Dashboard extends React.Component {
   constructor(props) {
     super(props)
   }
   render() {
-    return (
-      <div>
+    const redirectToLogin = <Redirect to="/login"></Redirect>
+    const app = (<div>
         <h2>Dashboard</h2>
         <ul>
           <li>
@@ -38,6 +44,7 @@ class Dashboard extends React.Component {
         <Route path="/dashboard/Third" component={Third}></Route>
       </div>
     )
+    return this.props.isAuth ? app : redirectToLogin
   }
 }
 
